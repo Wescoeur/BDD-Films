@@ -1,0 +1,530 @@
+/* ------------------------------------------ */
+/* ELEMENTS PRINCIPAUX                        */
+/* ------------------------------------------ */
+
+html, body
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#main_page_content
+{
+    min-height: 100%;
+    position: relative;
+    background-color: #032233;
+    z-index: 0;
+    padding: 10px 0px 10px 0px;
+}
+
+#main_page
+{
+    width: 980px;
+    margin: 0 auto;
+    background-color: #272A2D;
+}
+
+#main_page_title
+{
+    height: 100px;
+    vertical-align: middle;
+    background-color: #0A0A0A;
+}
+
+#main_page_title a
+{
+    text-decoration: none;
+}
+
+#main_page_title h1
+{
+    padding: 24px;
+    margin: 0px 0px 0px 50px;
+    font-size: 40px;
+}
+
+#main_page_nav ul
+{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+ 
+#main_page_nav ul li
+{
+    float: left;
+    background-color: #0F0F0F;
+}
+
+#main_page_nav ul li a
+{    
+    display: block;
+    float: left;
+    width: 196px;
+    line-height: 50px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;	
+}
+
+#main_page_nav ul li a:hover
+{
+    transition: all 0.5s ease-out;
+    text-shadow: 0px 0px 9px #FFFFFF; 
+    color: #D2D2D2;
+}
+
+#main_page_title h1 a, #main_page_nav li a
+{
+    font-family: monospace, helvetica, arial, sans-serif;
+    font-weight: bold;
+    color: #B8B8B8;
+}
+
+.banner_title
+{
+    font-family: 'Trebuchet MS', 'Courier New', 'Comic Sans MS';
+    font-size: 18px;
+    font-weight: normal;
+    padding: 8px 8px 8px 8px;
+    margin: 0px 30px 20px 0px;
+    color: #0A0A0A;
+    text-align: center;
+    background-color: #676767;
+}
+
+footer
+{
+    height: 50px;
+    background-color: #1A1A1A;
+    clear: both;
+    margin-top: 10px;
+}
+
+.movie_line
+{
+    width: 90%;
+    border-top: solid #5E5E5E 2px;
+    margin: 0 auto;
+    clear: both;
+    margin-top: 10px;
+}
+
+#border_content
+{
+    padding: 65px 0px 0px 30px;
+}
+
+/* ------------------------------------------ */
+/* PAGE D'UN FILM                             */
+/* ------------------------------------------ */
+
+#movie_img + ul, .movie_part, #movie_story_content
+{
+    font-family: 'Trebuchet MS', 'Courier New', 'Comic Sans MS';
+}
+
+#movie_img
+{
+    border: solid #A4A4A4 4px;
+    float: left;
+    padding: 4px;
+    margin: -10px 20px 10px 0px;
+    width: 160px;
+    max-width: 160px;
+    max-height: 230px;
+}
+
+#movie_img + ul
+{
+    list-style-type: none;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.movie_info, .movie_legend
+{
+    display: inline-block;
+    height: 24px;
+}
+
+.movie_legend
+{
+    width: 200px;
+    float: left;
+    color: #777777;
+}
+
+.movie_info, #movie_story_content
+{
+    color: #C5C5C5;
+}
+
+.movie_info
+{
+    width: 520px;
+}
+
+.movie_info ul
+{
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.movie_info ul li
+{
+    float: left;
+    display: block;
+}
+
+.movie_info ul li a
+{
+    transition: all 0.5s ease-out 0s;
+    color: #4C7572;
+    text-decoration: none;
+}
+
+.movie_info ul li a:hover
+{
+    transition: all 0.5s ease-out 0s;
+    color: #86CFCA;
+}
+#movie_story_border
+{
+    padding: 10px 30px 0px 30px;
+}
+
+.movie_part
+{
+    margin: 0px 0px 0px 40px;
+    color: #777777;
+    font-weight: normal;
+    font-size: 20px;
+    padding-bottom: 8px;
+}
+
+#movie_story_content
+{
+    text-indent: 50px;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+#allo
+{
+    height: 24px;
+    margin-top: -2px;
+}
+
+/* ------------------------------------------ */
+/* PAGE D'ERREUR D'UN FILM                    */
+/* ------------------------------------------ */
+
+#no_movie_content
+{
+    clear: both;
+    margin: 70px 20px 20px 20px;
+    padding: 30px 20px 20px 20px;
+    background-color: #676767;
+    height: 250px;
+}
+
+#movie_title_error, #movie_error
+{
+    font-family: "Andale Mono", "Courier New", "Courier", monospace;
+}
+
+#movie_title_error
+{
+    margin: 0px 0px 0px 40px;
+    font-size: 24px;
+}
+
+#movie_error
+{
+    display: inline-block;
+    float: left;
+    width: 500px;
+    margin: 60px 0px 0px 20px;
+}
+
+#no_movie_figure
+{
+    display: inline-block;
+    float: right;
+    margin: -25px 20px 0px 0px;
+}
+
+/* ------------------------------------------ */
+/* INDEX                                      */
+/* ------------------------------------------ */
+
+#index_content
+{
+    padding: 65px 30px 0px 30px;
+    margin: 0 auto;
+}
+
+.index_small_title, .index_container, .index_container_2
+{
+    font-family: 'Trebuchet MS', 'Courier New', 'Comic Sans MS';
+}
+
+.index_subcontainer a
+{
+    padding-right: 10px;
+}
+
+.index_subcontainer a:hover
+{
+    padding-left: 10px;
+}
+
+.index_subcontainer a, .index_vert_subcontainer a
+{
+    text-decoration: none;
+    color: #4C7572;
+    font-size: 15px;
+    transition: all 0.5s ease-out 0s;
+}
+
+.index_subcontainer a:hover, .index_vert_subcontainer a:hover
+{
+    transition: all 0.5s ease-out 0s;
+    color: #86CFCA;
+}
+
+#index_title, .index_small_title
+{
+    font-weight: normal;
+    margin: 0px 0px 0px 40px;
+    color: #777777;
+    font-size: 20px;
+    padding-bottom: 8px;
+}
+
+#movies_list_content
+{
+    margin: 0 auto;
+    background-color: #676767;
+    padding: 8px 6px 4px 6px;
+    border-spacing: 2px;
+    border: solid 1px black;
+}
+
+#movies_list_content td
+{
+    padding: 0px 2px 0px 2px;
+}
+
+.movie_model
+{
+    width: 84px;
+    height: 112px;
+}
+
+.index_container
+{
+    width: 50%;
+    float: left;
+    margin: 8px 0px 10px 0px;
+}
+
+.index_container_2
+{
+    width: 100%;
+    float: left;
+    margin: 8px 0px 10px 0px;
+}
+
+.index_subcontainer
+{
+    width: 200px;
+}
+
+.index_subcontainer, .index_vert_subcontainer
+{
+    list-style-type: none;
+    float: left;
+    margin: 0;
+    padding: 0px 0px 0px 20px;
+}
+
+.index_vert_subcontainer
+{
+    clear: both;
+}
+
+.index_vert_subcontainer li
+{
+    float: left;
+    display: block;
+    margin-right: 20px;
+}
+
+/* ------------------------------------------ */
+/* ACTORS/DIRECTORS                           */
+/* ------------------------------------------ */
+
+#person_table, #person_content, #person_table_border
+{
+    margin: 0 auto;
+}
+
+#person_num
+{
+    width: 60px;
+}
+
+#person_table
+{
+    border-collapse: collapse;
+    width: 800px;
+    font-size: 15px;
+}
+
+#person_table_border
+{
+    border: solid 2px black;
+    width: 808px;
+    padding: 4px 0px 4px 0px;
+    margin: 0 auto;
+}
+
+#person_table td, #person_table th
+{
+    border: solid 2px #121315;
+    padding: 2px 0px 2px 0px;
+    font-family: 'Trebuchet MS', 'Courier New', 'Comic Sans MS';
+}
+
+#person_table th
+{
+    background-color: #101010;
+}
+
+#person_table td
+{
+    text-align: center;
+    background-color: #1D1F22;
+}
+
+.person_id, #person_page
+{
+    font-weight: bold;
+    color: #767676;
+}
+
+#person_table a
+{
+    text-decoration: none;
+    color: #4F7B78;
+}
+
+#person_table a:hover
+{
+    text-decoration: underline;
+}
+
+#person_table .person_name:hover
+{
+    background-color: #292929;
+}
+
+.person_select
+{
+    color: #016DA2;
+}
+
+/* ------------------------------------------ */
+/* LA TOTALE                                  */
+/* ------------------------------------------ */
+
+#decade, #country, #theme, #letter
+{
+    width: 180px;
+    margin-right: 10px;
+}
+
+#select_container
+{
+    text-align: center;
+}
+
+#movie_table, #movie_table_border
+{
+    margin: 0 auto;
+}
+
+.movie_img
+{
+    width: 100px;
+    height: 133px;
+    padding: 4px 4px 0px 0px;
+}
+
+#movie_table
+{
+    border-collapse: collapse;
+    width: 908px;
+    font-size: 15px;
+}
+
+#movie_table_border
+{
+    border: solid 2px black;
+    width: 916px;
+    padding: 4px 0px 4px 0px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+#movie_table td, #movie_table th
+{
+    border: solid 2px #121315;
+    padding: 2px 0px 2px 0px;
+    font-family: 'Trebuchet MS', 'Courier New', 'Comic Sans MS';
+}
+
+#movie_table th
+{
+    background-color: #101010;
+}
+
+#movie_table td
+{
+    background-color: #1D1F22;
+    padding-left: 4px;
+    font-size: 14px;
+}
+
+#movie_table td
+{
+    color: #767676;
+}
+
+#movie_table a
+{
+    text-decoration: none;
+    color: #4F7B78;
+}
+
+#movie_table a:hover
+{
+    text-decoration: underline;
+}
+
+#movie_table td:hover
+{
+    background-color: #292929;
+}
+
+.movie_select
+{
+    color: #016DA2;
+}
