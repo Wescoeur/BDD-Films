@@ -1,0 +1,39 @@
+# ---------------------------------------------------------------------- #
+# Filename: .htaccess                                                    #
+# Author: ABHAMON Ronan                                                  #
+# Date: 2014-01-21 - 21:26:19                                            #
+# Site: https://github.com/Wescoeur                                      #
+#                                                                        #
+# ---------------------------------------------------------------------- #
+
+Options +FollowSymlinks
+RewriteEngine on
+
+# Page de description d'un film
+RewriteRule ^movie_([0-9]+).html index.php?action=movie&id=$1 [L]
+
+# Film tiré au hasard
+RewriteRule ^random_movie.html index.php?action=random [L]
+
+# Page des acteurs
+RewriteRule ^actors.html                     index.php?action=person&person_type=actors [L]
+RewriteRule ^actors-([a-z]).html             index.php?action=person&person_type=actors&letter=$1 [L]
+RewriteRule ^actors-([a-z])-([0-9]+).html    index.php?action=person&person_type=actors&letter=$1&page=$2 [L]
+RewriteRule ^actors-([0-9]+).html            index.php?action=person&person_type=actors&page=$1 [L]
+
+# Page des réalisateurs
+RewriteRule ^directors.html                  index.php?action=person&person_type=directors [L]
+RewriteRule ^directors-([a-z]).html          index.php?action=person&person_type=directors&letter=$1 [L]
+RewriteRule ^directors-([a-z])-([0-9]+).html index.php?action=person&person_type=directors&letter=$1&page=$2 [L]
+RewriteRule ^directors-([0-9]+).html         index.php?action=person&person_type=directors&page=$1 [L]
+
+# Recherche de films
+RewriteRule ^search.html                                              index.php?action=search [L]
+RewriteRule ^search-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+).html          index.php?action=search&decade=$1&country=$2&theme=$3&letter=$4 [L]
+RewriteRule ^search-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+).html index.php?action=search&decade=$1&country=$2&theme=$3&letter=$4&page=$5 [L]
+
+# Recherche par acteurs/réalisateurs
+RewriteRule ^search_by_actor-([0-9]+).html             index.php?action=search_by_person&search=actor&id=$1 [L]
+RewriteRule ^search_by_actor-([0-9]+)-([0-9]+).html    index.php?action=search_by_person&search=actor&id=$1&page=$2 [L]
+RewriteRule ^search_by_director-([0-9]+).html          index.php?action=search_by_person&search=director&id=$1 [L]
+RewriteRule ^search_by_director-([0-9]+)-([0-9]+).html index.php?action=search_by_person&search=director&id=$1&page=$2 [L]
