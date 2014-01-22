@@ -1,5 +1,13 @@
 <?php
 
+# ---------------------------------------------------------------------- #
+# Filename: abstract/abstract_person.php                                 #
+# Author: ABHAMON Ronan                                                  #
+# Date: 2014-01-22 - 14:00:12                                            #
+# Site: https://github.com/Wescoeur                                      #
+#                                                                        #
+# ---------------------------------------------------------------------- #
+
 $person_b = ($person_type == 'actor');
 
 /* Lettre */

@@ -1,5 +1,13 @@
 <?php
 
+# ---------------------------------------------------------------------- #
+# Filename: model/movie_search.php                                       #
+# Author: ABHAMON Ronan                                                  #
+# Date: 2014-01-22 - 14:00:33                                            #
+# Site: https://github.com/Wescoeur                                      #
+#                                                                        #
+# ---------------------------------------------------------------------- #
+
 /* -------------------------------------------------------------------- */
 /* Permet de récupérer une liste d'IDs de films relatifs à un thème,    */
 /* pays, décennie ou lettre. Ou permet de calculer le nombre de films   */

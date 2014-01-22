@@ -1,5 +1,13 @@
 <?php
 
+/* ---------------------------------------------------------------------- */
+/* Filename: controller/index.php                                         */
+/* Author: ABHAMON Ronan                                                  */
+/* Date: 2014-01-22 - 16:16:21                                            */
+/* Site: https://github.com/Wescoeur                                      */
+/*                                                                        */
+/* ---------------------------------------------------------------------- */
+
 /* Model */
 include_once("model/movie_list.php");
 include_once("model/movie_count.php");

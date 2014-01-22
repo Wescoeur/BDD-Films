@@ -1,3 +1,15 @@
+<?php
+
+# ---------------------------------------------------------------------- #
+# Filename: view/movie.php                                               #
+# Author: ABHAMON Ronan                                                  #
+# Date: 2014-01-22 - 14:00:37                                            #
+# Site: https://github.com/Wescoeur                                      #
+#                                                                        #
+# ---------------------------------------------------------------------- #
+
+?>
+
 <div id="border_content">
 <h2 class="banner_title"><?php echo $movie['Title'] ?></h2>
 <img id="movie_img" src="resources/movie/<?php echo $movie['Id'] ?>.jpg" alt="Où qu'il est mon titre ?" />

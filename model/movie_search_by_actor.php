@@ -1,5 +1,13 @@
 <?php
 
+# ---------------------------------------------------------------------- #
+# Filename: model/movie_search_by_actor.php                              #
+# Author: ABHAMON Ronan                                                  #
+# Date: 2014-01-22 - 14:00:33                                            #
+# Site: https://github.com/Wescoeur                                      #
+#                                                                        #
+# ---------------------------------------------------------------------- #
+
 /* -------------------------------------------------------------------- */
 /* Récupérations des infos sur des films d'un acteur     :              */
 /* - Seulement les IDs                                                  */

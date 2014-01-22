@@ -1,3 +1,15 @@
+<?php
+
+# ---------------------------------------------------------------------- #
+# Filename: view/search.php                                              #
+# Author: ABHAMON Ronan                                                  #
+# Date: 2014-01-22 - 14:00:37                                            #
+# Site: https://github.com/Wescoeur                                      #
+#                                                                        #
+# ---------------------------------------------------------------------- #
+
+?>
+
 <div id="border_content">
 <h1 class="banner_title">La totale</h1>
 </div>

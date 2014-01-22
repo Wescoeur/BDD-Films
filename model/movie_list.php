@@ -1,5 +1,13 @@
 <?php
 
+# ---------------------------------------------------------------------- #
+# Filename: model/movie_list.php                                         #
+# Author: ABHAMON Ronan                                                  #
+# Date: 2014-01-22 - 14:00:33                                            #
+# Site: https://github.com/Wescoeur                                      #
+#                                                                        #
+# ---------------------------------------------------------------------- #
+
 /* -------------------------------------------------------------------- */
 /* Contient diverses fonctions permettant la récupération de listes     */
 /* relatives aux films/themes/pays/décennies :                          */

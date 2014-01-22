@@ -1,5 +1,13 @@
 <?php
 
+/* ---------------------------------------------------------------------- */
+/* Filename: controller/actors.php                                        */
+/* Author: ABHAMON Ronan                                                  */
+/* Date: 2014-01-22 - 16:15:00                                            */
+/* Site: https://github.com/Wescoeur                                      */
+/*                                                                        */
+/* ---------------------------------------------------------------------- */
+
 /* Model */
 include_once('model/movie_list_actors.php');
 

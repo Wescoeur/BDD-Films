@@ -1,5 +1,13 @@
 <?php
 
+/* ---------------------------------------------------------------------- */
+/* Filename: controller/search_by_director.php                            */
+/* Author: ABHAMON Ronan                                                  */
+/* Date: 2014-01-22 - 16:14:20                                            */
+/* Site: https://github.com/Wescoeur                                      */
+/*                                                                        */
+/* ---------------------------------------------------------------------- */
+
 /* Model */
 include_once("model/movie_search_by_director.php");
 include_once("model/movie.php");

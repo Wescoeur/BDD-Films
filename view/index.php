@@ -1,3 +1,15 @@
+<?php
+
+# ---------------------------------------------------------------------- #
+# Filename: view/index.php                                               #
+# Author: ABHAMON Ronan                                                  #
+# Date: 2014-01-22 - 14:00:37                                            #
+# Site: https://github.com/Wescoeur                                      #
+#                                                                        #
+# ---------------------------------------------------------------------- #
+
+?>
+
 <div id="index_content">
 <h1 class="banner_title">Bienvenue sur TinyMovieDatabase !</h1>
 <div id="movies_list">

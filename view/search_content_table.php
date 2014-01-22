@@ -1,5 +1,13 @@
 <?php
 
+# ---------------------------------------------------------------------- #
+# Filename: view/search_content_table.php                                #
+# Author: ABHAMON Ronan                                                  #
+# Date: 2014-01-22 - 14:00:37                                            #
+# Site: https://github.com/Wescoeur                                      #
+#                                                                        #
+# ---------------------------------------------------------------------- #
+
 foreach($movies as $movie)
 {
   echo "<tr>\n<td rowspan=\"2\">";
