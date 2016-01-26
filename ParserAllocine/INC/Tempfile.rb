@@ -1,3 +1,6 @@
+#!/usr/bin/ruby
+# -*- coding: utf-8 -*-
+
 # ----------------------------------------------------------------------- #
 # Copyright (C) 2014-2016 ABHAMON Ronan                                   #
 #                                                                         #
@@ -12,13 +15,9 @@
 # GNU General Public License for more details.                            #
 #                                                                         #
 # You should have received a copy of the GNU General Public License       #
-# along with this program.  If not, see <http://www.gnu.org/licenses/>. 1 #
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.   #
 #                                                                         #
 # ----------------------------------------------------------------------- #
-
-#!/usr/bin/ruby
-# -*- coding: utf-8 -*-
-# ABHAMON Ronan
 
 require 'tempfile'
 

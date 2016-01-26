@@ -1,20 +1,30 @@
 #!/usr/bin/ruby
 # -*- coding: utf-8 -*-
 
-# ---------------------------------------------------------------------- #
-# Filename: INC/AllocineMovie.rb                                         #
-# Author: ABHAMON Ronan                                                  #
-# Date: 2014-01-21 - 21:52:28                                            #
-# Site: https://github.com/Wescoeur                                      #
-#                                                                        #
-# ---------------------------------------------------------------------- #
+# ----------------------------------------------------------------------- #
+# Copyright (C) 2014-2016 ABHAMON Ronan                                   #
+#                                                                         #
+# This program is free software: you can redistribute it and/or modify    #
+# it under the terms of the GNU General Public License as published by    #
+# the Free Software Foundation, either version 3 of the License, or       #
+# (at your option) any later version.                                     #
+#                                                                         #
+# This program is distributed in the hope that it will be useful,         #
+# but WITHOUT ANY WARRANTY; without even the implied warranty of          #
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           #
+# GNU General Public License for more details.                            #
+#                                                                         #
+# You should have received a copy of the GNU General Public License       #
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.   #
+#                                                                         #
+# ----------------------------------------------------------------------- #
 
 require 'open-uri'
 require 'cgi'
 
 class AllocineMovie
   attr_reader :id, :title, :image, :date, :duration, :director, :actors, :themes, :countries, :story
-  
+
   def initialize(id = 0)
     set_id(id)
   end
@@ -50,7 +60,7 @@ class AllocineMovie
 
         @director = f.parse(/<a.*?title="(.*?)".*?>/).flatten
         @actors = f.parse(/<a.*?title="(.*?)".*?>/).flatten
-       
+
         @themes = []
         f.parse(/_a/)
         until /div/ =~ (l = f.gets)
@@ -86,11 +96,11 @@ class AllocineMovie
       current_page = 1
       res = []
       regex = /fichefilm_gen_cfilm=(.*?).html/
-      
+
       while (n -= 1) >= 0
         f.parse(regex) # Lien de l'image à ne pas prendre
         res << f.parse(regex)[0][0].to_i
-        
+
         if max_results % 20 == n % 20
           current_page += 1
           f = open(adress + name + "&p=#{current_page}")
