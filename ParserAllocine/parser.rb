@@ -1,13 +1,23 @@
 #!/usr/bin/ruby
 # -*- coding: utf-8 -*-
 
-# ---------------------------------------------------------------------- #
-# Filename: parser.rb                                                    #
-# Author: ABHAMON Ronan                                                  #
-# Date: 2014-01-21 - 21:52:04                                            #
-# Site: https://github.com/Wescoeur                                      #
-#                                                                        #
-# ---------------------------------------------------------------------- #
+# ----------------------------------------------------------------------- #
+# Copyright (C) 2014-2016 ABHAMON Ronan                                   #
+#                                                                         #
+# This program is free software: you can redistribute it and/or modify    #
+# it under the terms of the GNU General Public License as published by    #
+# the Free Software Foundation, either version 3 of the License, or       #
+# (at your option) any later version.                                     #
+#                                                                         #
+# This program is distributed in the hope that it will be useful,         #
+# but WITHOUT ANY WARRANTY; without even the implied warranty of          #
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           #
+# GNU General Public License for more details.                            #
+#                                                                         #
+# You should have received a copy of the GNU General Public License       #
+# along with this program.  If not, see <http://www.gnu.org/licenses/>. 1 #
+#                                                                         #
+# ----------------------------------------------------------------------- #
 
 # -------------------------------------------------
 # ARGUMENTS
@@ -18,9 +28,9 @@
 update     => Update toute la BDD de films
 
 =end
- 
+
 # -------------------------------------------------
-# REQUIRE 
+# REQUIRE
 # -------------------------------------------------
 
 require 'find'
@@ -29,7 +39,7 @@ require './INC/AllocineMovie.rb'
 require './INC/Database.rb'
 
 # -------------------------------------------------
-# PARAMS 
+# PARAMS
 # -------------------------------------------------
 
 # Informations de la BDD mysql
@@ -42,7 +52,7 @@ db_database = 'Movies'
 $movies_folder = '/run/media/wescoeur/Ronan/DOCUMENTS/Films/VF/'
 
 # -------------------------------------------------
-# UPDATE 
+# UPDATE
 # -------------------------------------------------
 
 def db_update(dtb)
@@ -59,7 +69,7 @@ def db_update(dtb)
           puts "Done: #{movie_name}"
           movie.set_id(results[0])
           dtb.add(movie, f)
-          
+
           # Plusieurs résultats
         elsif results.size > 1
           arr, i = [], 0
@@ -67,25 +77,25 @@ def db_update(dtb)
           results[0..49].each do |r|
             if not (c_movie = AllocineMovie.new(r)).id.zero?
               puts "\n-------------------------------------------------------------------------------------"
-              puts "Choice: #{i.to_s} ID(#{r}) http://www.allocine.fr/film/fichefilm_gen_cfilm=#{r}.html" 
+              puts "Choice: #{i.to_s} ID(#{r}) http://www.allocine.fr/film/fichefilm_gen_cfilm=#{r}.html"
               puts "--------------------------------------------------------------------------------------\n"
               puts (arr << c_movie).last
-              i += 1 
+              i += 1
             end
           end
-          
+
           if arr.empty?
             puts "Unable to find a correct result..."
           else
             print "\nWhat your choice for '#{movie_name}' ? "
-            while (choice = $stdin.gets)[0] < '0' or choice[0] > '9' or arr[choice.to_i] == nil do end 
+            while (choice = $stdin.gets)[0] < '0' or choice[0] > '9' or arr[choice.to_i] == nil do end
             dtb.add(arr[choice.to_i], f)
           end
 
           # Aucun résultat
         else
           print "No results for '#{movie_name}'. What the movie ID ? (nil for break) "
-          
+
           if (choice = $stdin.gets.to_i) != 0
             movie = AllocineMovie.new(choice)
             dtb.add(movie, f)
@@ -99,7 +109,7 @@ def db_update(dtb)
 end
 
 # -------------------------------------------------
-# SCRIPT 
+# SCRIPT
 # -------------------------------------------------
 
 begin

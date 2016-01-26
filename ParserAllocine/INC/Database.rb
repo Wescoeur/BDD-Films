@@ -1,13 +1,23 @@
 #!/usr/bin/ruby
 # -*- coding: utf-8 -*-
 
-# ---------------------------------------------------------------------- #
-# Filename: INC/Database.rb                                              #
-# Author: ABHAMON Ronan                                                  #
-# Date: 2014-01-21 - 21:52:28                                            #
-# Site: https://github.com/Wescoeur                                      #
-#                                                                        #
-# ---------------------------------------------------------------------- #
+# ----------------------------------------------------------------------- #
+# Copyright (C) 2014-2016 ABHAMON Ronan                                   #
+#                                                                         #
+# This program is free software: you can redistribute it and/or modify    #
+# it under the terms of the GNU General Public License as published by    #
+# the Free Software Foundation, either version 3 of the License, or       #
+# (at your option) any later version.                                     #
+#                                                                         #
+# This program is distributed in the hope that it will be useful,         #
+# but WITHOUT ANY WARRANTY; without even the implied warranty of          #
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           #
+# GNU General Public License for more details.                            #
+#                                                                         #
+# You should have received a copy of the GNU General Public License       #
+# along with this program.  If not, see <http://www.gnu.org/licenses/>. 1 #
+#                                                                         #
+# ----------------------------------------------------------------------- #
 
 require 'mysql'
 
@@ -25,7 +35,7 @@ class Database
     puts "Server Version: " + @dtb.get_server_info
 
     # Création des tables si elles n'existent pas
-    @dtb.query("CREATE TABLE IF NOT EXISTS Movie 
+    @dtb.query("CREATE TABLE IF NOT EXISTS Movie
                 (Id INT UNSIGNED PRIMARY KEY,
                  Title VARCHAR(255) NOT NULL,
                  Date VARCHAR(30),
@@ -69,15 +79,15 @@ class Database
   def close
     @dtb.close if @dtb
   end
-  
+
   # Vérifie qu'un fichier donné est dans la base
   def include?(filename_path)
     movie_name = Mysql.escape_string(File.basename(filename_path, '.*'))
     res = @dtb.query("SELECT Extension, Size, LastModification FROM Movie WHERE Title = \"#{movie_name}\"")
 
     while row = res.fetch_row
-      return true if row[0] == File.extname(filename_path) and 
-        row[1] == File.size(filename_path).to_s and 
+      return true if row[0] == File.extname(filename_path) and
+        row[1] == File.size(filename_path).to_s and
         row[2] == File.mtime(filename_path).to_i.to_s
     end
 
@@ -99,11 +109,11 @@ class Database
 
     @dtb.query("INSERT INTO Movie
                 VALUES
-                (#{movie.id}, \"#{file}\", \"#{movie.date}\", \"#{movie.duration}\", 
-                 \"#{story}\", \"#{File.extname(filename_path)}\", #{File.size(filename_path)}, 
-                 #{File.mtime(filename_path).to_i}, \"#{Time.now.to_s}\")") 
- 
-    movie.countries.each { |country| add_value(country, :country) 
+                (#{movie.id}, \"#{file}\", \"#{movie.date}\", \"#{movie.duration}\",
+                 \"#{story}\", \"#{File.extname(filename_path)}\", #{File.size(filename_path)},
+                 #{File.mtime(filename_path).to_i}, \"#{Time.now.to_s}\")")
+
+    movie.countries.each { |country| add_value(country, :country)
       add_relation_value(movie.id, country, :country)}
     movie.actors.each { |actor| add_value(actor, :actor)
       add_relation_value(movie.id, actor, :actor)}
@@ -130,8 +140,8 @@ class Database
     movie_name = Mysql.escape_string(movie_name).force_encoding("UTF-8")
     table = type.to_s
     arr = []
-    res = @dtb.query("SELECT Name FROM #{table.capitalize}, #{jtable}, Movie 
-                      WHERE #{table.capitalize}.Id = Id_#{table} AND Movie.Id = Id_movie AND 
+    res = @dtb.query("SELECT Name FROM #{table.capitalize}, #{jtable}, Movie
+                      WHERE #{table.capitalize}.Id = Id_#{table} AND Movie.Id = Id_movie AND
                       Title LIKE \"#{movie_name.to_s}\"")
     while row = res.fetch_row do arr << row[0] end
     arr
@@ -152,7 +162,7 @@ class Database
   end
 
   # Ajoute une relation
-  def add_relation_value(id_movie, value, type)  
+  def add_relation_value(id_movie, value, type)
     case type
       when :country
       table = "Made_in"
@@ -164,7 +174,7 @@ class Database
       table = "Is_a"
     end
 
-    id_value = get_id_value(value, type) 
+    id_value = get_id_value(value, type)
     @dtb.query("INSERT INTO #{table} VALUES (#{id_movie}, #{id_value})")
   end
 
